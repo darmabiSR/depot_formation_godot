@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://u5pvhk1wwha"]
+
+[ext_resource type="PackedScene" uid="uid://cmoa1c1gcu0ds" path="res://guy.tscn" id="1_2qcck"]
+[ext_resource type="PackedScene" uid="uid://bsdq4ggwu6sjg" path="res://caisse.tscn" id="2_h350t"]
+[ext_resource type="Script" uid="uid://c0hspdrvd0oy8" path="res://caisse_lumineuse.gd" id="3_c0r2t"]
+[ext_resource type="PackedScene" uid="uid://bmanu8s1q12dj" path="res://charriot.tscn" id="3_h350t"]
+
+[node name="heritage" type="Node2D" unique_id=759291205]
+
+[node name="guy" parent="." unique_id=829933324 instance=ExtResource("1_2qcck")]
+
+[node name="caisse" parent="." unique_id=696747102 instance=ExtResource("2_h350t")]
+position = Vector2(278, 147)
+script = ExtResource("3_c0r2t")
+
+[node name="charriot" parent="." unique_id=1558462122 instance=ExtResource("3_h350t")]
+position = Vector2(218, 306)

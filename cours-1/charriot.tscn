@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bmanu8s1q12dj"]
+
+[ext_resource type="Script" uid="uid://dnd1en3qems4p" path="res://charriot.gd" id="1_y3rbd"]
+[ext_resource type="Texture2D" uid="uid://d2txc1aqs4dfe" path="res://chariot.png" id="2_im5v5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tnitk"]
+size = Vector2(15, 10)
+
+[node name="charriot" type="StaticBody2D" unique_id=1558462122]
+texture_filter = 1
+scale = Vector2(4, 4)
+script = ExtResource("1_y3rbd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=419865994]
+shape = SubResource("RectangleShape2D_tnitk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1562495421]
+texture = ExtResource("2_im5v5")

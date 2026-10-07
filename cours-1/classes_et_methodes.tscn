@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://cu7r428n7oe57"]
+
+[ext_resource type="Script" uid="uid://ceqygaqslqndh" path="res://jean_yve.gd" id="1_p55ux"]
+[ext_resource type="Script" uid="uid://v8oaqkyq0n2x" path="res://classes_et_methodes.gd" id="1_q18nu"]
+[ext_resource type="Texture2D" uid="uid://lua7m515uxmt" path="res://jyt.jpg" id="1_t7jtx"]
+
+[node name="classes_et_methodes" type="Node2D" unique_id=863584662]
+script = ExtResource("1_q18nu")
+
+[node name="jean_yve" type="Node2D" parent="." unique_id=529535390]
+position = Vector2(320, 168)
+script = ExtResource("1_p55ux")
+
+[node name="Jyt" type="Sprite2D" parent="jean_yve" unique_id=1326853022]
+position = Vector2(123.875, 102)
+scale = Vector2(0.615633, 0.3895349)
+texture = ExtResource("1_t7jtx")
+
+[node name="Label" type="Label" parent="jean_yve" unique_id=603317308]
+offset_left = 83.0
+offset_top = 219.0
+offset_right = 145.0
+offset_bottom = 242.0
+text = "Bonjour"

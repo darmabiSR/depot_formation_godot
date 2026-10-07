@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://buon540yn3y3v"]
+
+[ext_resource type="Texture2D" uid="uid://bng5by140u67j" path="res://pattate.png" id="1_00bf3"]
+[ext_resource type="Texture2D" uid="uid://bwdrswg7itivx" path="res://oeuil.png" id="2_pn7lo"]
+[ext_resource type="Texture2D" uid="uid://dhenkuixb3qvg" path="res://bouche.png" id="3_mk4xb"]
+[ext_resource type="Texture2D" uid="uid://bqnosqpad65wo" path="res://pupil.png" id="3_pn7lo"]
+[ext_resource type="Texture2D" uid="uid://y6edtcbygl1" path="res://bras.png" id="4_kh7ao"]
+[ext_resource type="Texture2D" uid="uid://bkp3v27a4lbn" path="res://jambe.png" id="5_hb87t"]
+
+[node name="monsieur_patate" type="Node2D" unique_id=273716165]
+
+[node name="corps" type="Sprite2D" parent="." unique_id=1368808826]
+position = Vector2(470, 238)
+texture = ExtResource("1_00bf3")
+
+[node name="visage" type="Node2D" parent="corps" unique_id=2095353495]
+position = Vector2(-3, -10)
+
+[node name="oeuil_gauche" type="Sprite2D" parent="corps/visage" unique_id=1665388769]
+position = Vector2(-27, -52)
+texture = ExtResource("2_pn7lo")
+
+[node name="pupille" type="Sprite2D" parent="corps/visage/oeuil_gauche" unique_id=833136480]
+position = Vector2(12, 0)
+texture = ExtResource("3_pn7lo")
+
+[node name="oeuil_droit" type="Sprite2D" parent="corps/visage" unique_id=846158123]
+position = Vector2(45, -56)
+texture = ExtResource("2_pn7lo")
+
+[node name="pupille" type="Sprite2D" parent="corps/visage/oeuil_droit" unique_id=363259460]
+position = Vector2(-1, -7)
+texture = ExtResource("3_pn7lo")
+
+[node name="bouche" type="Sprite2D" parent="corps/visage" unique_id=1887080106]
+position = Vector2(4, 25)
+texture = ExtResource("3_mk4xb")
+
+[node name="bras_gauche" type="Sprite2D" parent="corps" unique_id=955699252]
+position = Vector2(-139, -18)
+texture = ExtResource("4_kh7ao")
+
+[node name="bras_droit" type="Sprite2D" parent="corps" unique_id=1285953108]
+position = Vector2(144, -29)
+rotation = -3.440044
+texture = ExtResource("4_kh7ao")
+
+[node name="jambe_gauche" type="Sprite2D" parent="corps" unique_id=301980925]
+position = Vector2(-40, 150)
+rotation = -1.3875368
+texture = ExtResource("5_hb87t")
+
+[node name="jambe_droite" type="Sprite2D" parent="corps" unique_id=1696725888]
+position = Vector2(41.000008, 149.00002)
+rotation = -1.7453293
+texture = ExtResource("5_hb87t")

@@ -1,0 +1,83 @@
+[gd_scene format=3 uid="uid://c0030q4pdmunc"]
+
+[sub_resource type="GDScript" id="GDScript_3o6qr"]
+script/source = "extends CharacterBody2D
+
+
+const SPEED = 300.0
+const JUMP_VELOCITY = -400.0
+
+
+func _physics_process(delta: float) -> void:
+	# Add the gravity.
+	if not is_on_floor():
+		velocity += get_gravity() * delta
+
+	# Handle jump.
+	if Input.is_action_just_pressed(\"ui_accept\") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+
+	# Get the input direction and handle the movement/deceleration.
+	# As good practice, you should replace UI actions with custom gameplay actions.
+	var direction := Input.get_axis(\"ui_left\", \"ui_right\")
+	if direction:
+		velocity.x = direction * SPEED
+	else:
+		velocity.x = move_toward(velocity.x, 0, SPEED)
+
+	move_and_slide()
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3o6qr"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3o6qr"]
+distance = -443.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbvel"]
+size = Vector2(328.5, 159)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3o6qr"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_lbvel"]
+
+[node name="physique2dbase" type="Node2D" unique_id=594629706]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=737863172]
+position = Vector2(407, 183)
+collision_layer = 0
+script = SubResource("GDScript_3o6qr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=2093153272]
+shape = SubResource("RectangleShape2D_3o6qr")
+
+[node name="world" type="StaticBody2D" parent="." unique_id=1467933644]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="world" unique_id=224919438]
+shape = SubResource("WorldBoundaryShape2D_3o6qr")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1885761256]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1855350922]
+position = Vector2(204, 272)
+shape = SubResource("RectangleShape2D_lbvel")
+
+[node name="Area2D2" type="StaticBody2D" parent="." unique_id=1235841020]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=494931052]
+position = Vector2(659, 286)
+shape = SubResource("RectangleShape2D_lbvel")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=2137494432]
+position = Vector2(953, 205)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=1592554664]
+position = Vector2(0, 1)
+shape = SubResource("CapsuleShape2D_3o6qr")
+
+[node name="RigidBody2D2" type="RigidBody2D" parent="." unique_id=415700740]
+position = Vector2(929, 265)
+angular_velocity = 0.87266463
+constant_force = Vector2(0.5, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D2" unique_id=1850077739]
+shape = SubResource("CapsuleShape2D_lbvel")
