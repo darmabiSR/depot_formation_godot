@@ -1,0 +1,76 @@
+[gd_scene format=3 uid="uid://l3wyc2hfml3j"]
+
+[ext_resource type="Script" uid="uid://c28ajc4772ljq" path="res://camera.gd" id="1_4mmb2"]
+[ext_resource type="Script" uid="uid://bo75jg4w2j5m4" path="res://character_body_2d.gd" id="1_e2vlf"]
+[ext_resource type="Texture2D" uid="uid://clhpu5rvkypj" path="res://icon.svg" id="2_pla4w"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3o6qr"]
+size = Vector2(123, 117)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3o6qr"]
+distance = -1000.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_lbvel"]
+normal = Vector2(0, 1)
+distance = -300.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_petp3"]
+normal = Vector2(1, 0)
+distance = -50.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_n8fjg"]
+normal = Vector2(-1, 0)
+distance = -2000.0
+
+[node name="challenge_camera" type="Node2D" unique_id=1259245239]
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1443395120]
+position = Vector2(603, 290)
+script = ExtResource("1_4mmb2")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=509568281]
+position = Vector2(517, 275)
+motion_mode = 1
+script = ExtResource("1_e2vlf")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1470949933]
+position = Vector2(225, 72)
+texture = ExtResource("2_pla4w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=2050265465]
+position = Vector2(225.5, 71.5)
+shape = SubResource("RectangleShape2D_3o6qr")
+
+[node name="bound" type="StaticBody2D" parent="." unique_id=1989609310]
+
+[node name="Sprite2D" type="Sprite2D" parent="bound" unique_id=598730913]
+position = Vector2(-84, 443.25006)
+scale = Vector2(1, 14.957033)
+texture = ExtResource("2_pla4w")
+
+[node name="Sprite2D2" type="Sprite2D" parent="bound" unique_id=2019051021]
+position = Vector2(1367, -291)
+scale = Vector2(22.359375, 0.43017554)
+texture = ExtResource("2_pla4w")
+
+[node name="Sprite2D3" type="Sprite2D" parent="bound" unique_id=2020950323]
+position = Vector2(2045, 359)
+scale = Vector2(1, 14.957033)
+texture = ExtResource("2_pla4w")
+
+[node name="Sprite2D4" type="Sprite2D" parent="bound" unique_id=2053740761]
+position = Vector2(1396.2499, 1019)
+scale = Vector2(23.339842, 0.89160204)
+texture = ExtResource("2_pla4w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bound" unique_id=1119293749]
+shape = SubResource("WorldBoundaryShape2D_3o6qr")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="bound" unique_id=320221586]
+shape = SubResource("WorldBoundaryShape2D_lbvel")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="bound" unique_id=1476262390]
+shape = SubResource("WorldBoundaryShape2D_petp3")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="bound" unique_id=155535808]
+shape = SubResource("WorldBoundaryShape2D_n8fjg")

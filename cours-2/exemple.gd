@@ -1,0 +1,16 @@
+extends Node
+
+var skibidi : Vector2 = Vector2(1.2, 3.0)
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+
+func pizza(arg1 : int, arg2) -> Vector2:
+	return Vector2(arg1,arg2)

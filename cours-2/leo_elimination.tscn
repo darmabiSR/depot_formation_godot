@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://devavou1k75wd"]
+
+[ext_resource type="Texture2D" uid="uid://cp5hq28ayy0ea" path="res://leo.png" id="1_0sou4"]
+[ext_resource type="Script" uid="uid://b2fl20y2ds4r" path="res://leo.gd" id="1_d73jq"]
+[ext_resource type="Script" uid="uid://bo75jg4w2j5m4" path="res://character_body_2d.gd" id="3_gsaw2"]
+[ext_resource type="Texture2D" uid="uid://clhpu5rvkypj" path="res://icon.svg" id="4_2ny05"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ydtad"]
+size = Vector2(123, 117)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3o6qr"]
+size = Vector2(156.5, 288.5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d73jq"]
+atlas = ExtResource("1_0sou4")
+region = Rect2(0, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7jk0j"]
+atlas = ExtResource("1_0sou4")
+region = Rect2(500, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsaw2"]
+atlas = ExtResource("1_0sou4")
+region = Rect2(1000, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2ny05"]
+atlas = ExtResource("1_0sou4")
+region = Rect2(1500, 0, 500, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3o6qr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d73jq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7jk0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gsaw2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2ny05")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 7.0
+}]
+
+[node name="leo_elimination" type="Node2D" unique_id=1202709842]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=58470445]
+position = Vector2(517, 275)
+motion_mode = 1
+script = ExtResource("3_gsaw2")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1227510596]
+position = Vector2(-379, -82)
+texture = ExtResource("4_2ny05")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=881526501]
+position = Vector2(-378.5, -82.5)
+shape = SubResource("RectangleShape2D_ydtad")
+
+[node name="leo" type="Area2D" parent="." unique_id=1808046919]
+position = Vector2(469, 231)
+script = ExtResource("1_d73jq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="leo" unique_id=766520748]
+position = Vector2(258.75, -18.25)
+shape = SubResource("RectangleShape2D_3o6qr")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="leo" unique_id=156728846]
+position = Vector2(270, -23.999985)
+scale = Vector2(0.742, 0.62700003)
+sprite_frames = SubResource("SpriteFrames_3o6qr")
+animation = &"idle"

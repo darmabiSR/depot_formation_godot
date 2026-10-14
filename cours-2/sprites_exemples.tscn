@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://bcgv24uxapnqr"]
+
+[ext_resource type="Texture2D" uid="uid://dxoqexr8h50pd" path="res://fleche.png" id="1_cqmd1"]
+[ext_resource type="Script" uid="uid://br2fbaa28cils" path="res://sprites_exemples.gd" id="1_cwju0"]
+
+[node name="sprites_exemples" type="Node2D" unique_id=2041346820]
+script = ExtResource("1_cwju0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1455095109]
+position = Vector2(518, 292)
+texture = ExtResource("1_cqmd1")
+hframes = 4
